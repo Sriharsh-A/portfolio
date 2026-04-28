@@ -4,6 +4,7 @@
   min-height: 100vh;
 }
 
+/* MAIN SECTION TITLE */
 .main-title {
   text-align: center;
   font-size: 5rem;
@@ -20,24 +21,28 @@
   gap: 20px;
 }
 
-/* THE CARD */
+/* THE CARD CONTAINER */
 .work-item {
   background: rgba(15, 15, 15, 0.5);
   border: 1px solid #1a1a1a;
-  border-radius: 24px; /* Rounded Edges */
+  border-radius: 24px; /* Rounded Edges as requested */
   padding: 40px;
   cursor: pointer;
+  
+  /* GPU Optimized Transitions for Smooth Feel */
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: max-height, transform, background-color, border-color;
+  
   overflow: hidden;
 }
 
 .work-item.active {
   border-color: #dfff00;
-  background: rgba(223, 255, 0, 0.03);
-  transform: scale(1.02);
+  background: rgba(223, 255, 0, 0.04);
+  transform: translateY(-5px); /* Subtle lift instead of scale */
 }
 
-/* HEADER SECTION */
+/* HEADER SECTION (Titles on the Left) */
 .item-header {
   display: flex;
   align-items: baseline;
@@ -55,7 +60,7 @@
   font-weight: 700;
   color: #fff;
   margin: 0;
-  text-transform: none; /* First letter cap as written in JS */
+  text-transform: none; /* First-letter caps (Standard Casing) */
   transition: color 0.3s;
 }
 
@@ -63,15 +68,16 @@
   color: #dfff00;
 }
 
-/* REVEAL CONTENT */
+/* REVEAL CONTENT (Hover to Open) */
 .item-content {
   max-height: 0;
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, max-height;
 }
 
 .work-item.active .item-content {
-  max-height: 300px;
+  max-height: 500px; /* High enough to contain all content */
   opacity: 1;
   margin-top: 30px;
 }
@@ -126,7 +132,7 @@
 
 .p-link {
   color: #666;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .p-link:hover {
@@ -134,9 +140,34 @@
   transform: translateY(-3px);
 }
 
+.dev-tag {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #dfff00;
+  border-bottom: 1px solid #dfff00;
+  padding-bottom: 2px;
+}
+
 /* MOBILE ADAPTATION */
 @media (max-width: 768px) {
-  .main-title { font-size: 2.5rem; letter-spacing: 5px; }
-  .p-title { font-size: 2rem; }
-  .work-item { padding: 30px; }
+  .main-title { 
+    font-size: 2.5rem; 
+    letter-spacing: 5px; 
+    margin-bottom: 50px;
+  }
+  
+  .p-title { 
+    font-size: 2rem; 
+  }
+  
+  .work-item { 
+    padding: 30px; 
+    border-radius: 18px;
+  }
+
+  .p-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
 }
