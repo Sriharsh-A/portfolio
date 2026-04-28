@@ -1,0 +1,16 @@
+.interactive-name {
+  font-size: 5rem;
+  font-weight: 900;
+  color: white;
+  display: flex;
+  cursor: default;
+  user-select: none;
+}
+
+.interactive-letter {
+  transition: color 0.3s ease;
+}
+
+.interactive-letter:hover {
+  color: #dfff00; /* Your signature neon yellow */
+}

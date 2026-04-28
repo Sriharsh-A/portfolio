@@ -1,0 +1,231 @@
+.skills-container {
+  height: 100vh;
+  background-color: #000000;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.skills-bg-grid {
+  display: none; 
+}
+
+.skills-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 80px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 60px;
+  z-index: 10;
+  transition: all 0.5s ease;
+}
+
+.cards-wrapper.dimmed {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.9);
+}
+
+.category-card {
+  width: 300px;
+  height: 420px;
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid #333;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.card-index {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-family: monospace;
+  color: #555;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.category-card h2 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: white;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+
+.card-line {
+  width: 40px;
+  height: 2px;
+  background-color: #555;
+  margin: 20px 0;
+  transition: width 0.3s, background-color 0.3s;
+}
+
+.card-desc {
+  color: #888;
+  font-family: monospace;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.card-btn {
+  margin-top: 40px;
+  background: transparent;
+  border: 1px solid #555;
+  color: #888;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-family: monospace;
+  font-size: 0.8rem;
+  transition: all 0.3s;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  border-color: #dfff00;
+  box-shadow: 0 0 30px rgba(223, 255, 0, 0.15);
+}
+
+.category-card:hover h2 {
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.category-card:hover .card-line {
+  width: 100px;
+  background-color: #dfff00;
+}
+
+.category-card:hover .card-btn {
+  background-color: #dfff00;
+  color: black;
+  border-color: #dfff00;
+  box-shadow: 0 0 15px #dfff00;
+}
+
+.scatter-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-skill {
+  position: absolute; 
+  padding: 12px 25px;
+  background: rgba(10, 10, 10, 0.9);
+  border: 1px solid #333;
+  color: #ccc;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  cursor: grab;
+  clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
+  z-index: 20; 
+}
+
+.skill-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #555;
+  border-radius: 50%;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.floating-skill:hover {
+  border-color: #dfff00;
+  color: white;
+  box-shadow: 0 0 20px rgba(223, 255, 0, 0.2);
+  z-index: 100 !important;
+}
+
+.floating-skill:hover .skill-dot {
+  background-color: #dfff00;
+  box-shadow: 0 0 8px #dfff00;
+}
+
+.close-btn {
+  position: absolute; 
+  width: auto; 
+  padding: 10px 25px; 
+  border-radius: 20px;
+  background: black;
+  color: #dfff00;
+  border: 1px solid #dfff00;
+  font-family: monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.close-btn:hover {
+  background: #dfff00;
+  color: black;
+  box-shadow: 0 0 20px #dfff00;
+}
+
+@media (max-width: 640px) {
+  .cards-wrapper {
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 40px;
+  }
+  
+  .category-card {
+    width: 100%; 
+    max-width: 300px; 
+    height: 240px;
+  }
+  
+  .skills-title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    top: auto;
+  }
+
+  .floating-skill {
+    font-size: 0.75rem; 
+    padding: 8px 12px;
+  }
+
+  .close-btn {
+    bottom: 40px;
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+}

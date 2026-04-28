@@ -1,0 +1,81 @@
+.home-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #050505;
+  color: white;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-content {
+  z-index: 10;
+}
+
+.greeting {
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-size: 6rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  cursor: default;
+}
+
+.magnetic-char {
+  transition: color 0.3s ease;
+}
+
+.magnetic-char:hover {
+  color: #dfff00;
+}
+
+.description {
+  margin-top: 30px;
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* CTA Button Styling */
+.home-cta-btn {
+  text-decoration: none;
+  color: #dfff00;
+  border: 1px solid #dfff00;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-block;
+  background-color: transparent;
+}
+
+.home-cta-btn:hover {
+  background-color: #dfff00;
+  color: black;
+  box-shadow: 0 0 20px #dfff00;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 3rem;
+  }
+  
+  .greeting {
+    font-size: 0.9rem;
+  }
+}

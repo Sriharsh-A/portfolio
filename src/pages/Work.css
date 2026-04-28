@@ -1,0 +1,165 @@
+.work-container {
+  background-color: #050505;
+  color: white;
+  padding: 100px 5vw;
+}
+
+.work-sticky-title {
+  margin-bottom: 100px;
+}
+
+.section-title {
+  font-size: 8vw;
+  font-weight: 900;
+  color: #111;
+  letter-spacing: -2px;
+  margin: 0;
+}
+
+.work-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-item {
+  display: flex;
+  border-top: 1px solid #222;
+  padding: 80px 0;
+  min-height: 45vh;
+  transition: all 0.5s ease;
+}
+
+.work-item:hover {
+  background-color: rgba(223, 255, 0, 0.01);
+}
+
+/* LEFT: TITLE BLOCK */
+.work-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-id {
+  font-family: monospace;
+  color: #dfff00;
+  font-size: 1.2rem;
+}
+
+.project-title {
+  font-size: 5rem;
+  font-weight: 900;
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  line-height: 0.9;
+}
+
+.project-year {
+  color: #444;
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+
+/* RIGHT: CONTENT BLOCK */
+.work-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+}
+
+.content-inner {
+  max-width: 550px;
+}
+
+.project-category {
+  color: #dfff00;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.project-desc {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 35px;
+}
+
+.project-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.tool-tag {
+  font-family: monospace;
+  font-size: 0.85rem;
+  background: #111;
+  padding: 6px 14px;
+  border-radius: 4px;
+  color: #888;
+  border: 1px solid #222;
+  transition: all 0.3s ease;
+}
+
+.work-item:hover .tool-tag {
+  border-color: #333;
+  color: #eee;
+}
+
+.project-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.work-icon-link {
+  color: #666;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.work-icon-link:hover {
+  color: #dfff00;
+  transform: translateY(-5px);
+}
+
+.status-badge {
+  font-family: monospace;
+  color: #dfff00;
+  font-size: 0.8rem;
+  border: 1px solid #dfff00;
+  padding: 8px 18px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1100px) {
+  .project-title { font-size: 4rem; }
+  .work-right { padding-left: 40px; }
+}
+
+@media (max-width: 900px) {
+  .work-item {
+    flex-direction: column;
+    padding: 60px 0;
+  }
+  
+  .project-title {
+    font-size: 3.5rem;
+  }
+  
+  .work-right {
+    padding-left: 0;
+    margin-top: 40px;
+  }
+
+  .project-desc { font-size: 1.1rem; }
+}

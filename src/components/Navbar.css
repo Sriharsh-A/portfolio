@@ -1,0 +1,130 @@
+.navbar {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content; 
+  min-width: 650px;
+  max-width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px; 
+  box-sizing: border-box;
+  background-color: rgba(20, 20, 20, 0.75);
+  backdrop-filter: blur(25px) saturate(180%); 
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.08); 
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); 
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.logo {
+  color: #dfff00;
+  font-weight: 800;
+  font-size: 1.3rem; 
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  margin-right: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 45px; 
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #bbb;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #dfff00; 
+  text-shadow: 0 0px 20px rgb(221, 255, 0);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    min-width: unset;
+    width: 92%;
+    top: 15px;
+    padding: 12px 15px;
+    border-radius: 15px;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+    gap: 15px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    min-width: unset; 
+    width: 90%;
+    padding: 12px 20px; 
+    top: 15px;
+    border-radius: 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+  }
+
+  .logo-container {
+    margin-right: 10px;
+  }
+
+  .scene,
+  .cube,
+  .face {
+    width: 25px;
+    height: 25px;
+  }
+
+  .cube { transform: translateZ(-12.5px); } 
+  .front  { transform: rotateY(0deg) translateZ(12.5px); }
+  .right  { transform: rotateY(90deg) translateZ(12.5px); }
+  .back   { transform: rotateY(180deg) translateZ(12.5px); }
+  .left   { transform: rotateY(-90deg) translateZ(12.5px); }
+  .top    { transform: rotateX(90deg) translateZ(12.5px); }
+  .bottom { transform: rotateX(-90deg) translateZ(12.5px); }
+}
