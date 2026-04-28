@@ -1,165 +1,142 @@
-.work-container {
+.work-section {
   background-color: #050505;
-  color: white;
-  padding: 100px 5vw;
+  padding: 100px 10vw;
+  min-height: 100vh;
 }
 
-.work-sticky-title {
-  margin-bottom: 100px;
-}
-
-.section-title {
-  font-size: 8vw;
+.main-title {
+  text-align: center;
+  font-size: 5rem;
   font-weight: 900;
-  color: #111;
-  letter-spacing: -2px;
-  margin: 0;
+  color: #fff;
+  letter-spacing: 15px;
+  margin-bottom: 80px;
+  text-transform: uppercase;
 }
 
 .work-list {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
+/* THE CARD */
 .work-item {
+  background: rgba(15, 15, 15, 0.5);
+  border: 1px solid #1a1a1a;
+  border-radius: 24px; /* Rounded Edges */
+  padding: 40px;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.work-item.active {
+  border-color: #dfff00;
+  background: rgba(223, 255, 0, 0.03);
+  transform: scale(1.02);
+}
+
+/* HEADER SECTION */
+.item-header {
   display: flex;
-  border-top: 1px solid #222;
-  padding: 80px 0;
-  min-height: 45vh;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.p-num {
+  font-family: monospace;
+  color: #444;
+  font-size: 1rem;
+}
+
+.p-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  text-transform: none; /* First letter cap as written in JS */
+  transition: color 0.3s;
+}
+
+.work-item.active .p-title {
+  color: #dfff00;
+}
+
+/* REVEAL CONTENT */
+.item-content {
+  max-height: 0;
+  opacity: 0;
   transition: all 0.5s ease;
 }
 
-.work-item:hover {
-  background-color: rgba(223, 255, 0, 0.01);
-}
-
-/* LEFT: TITLE BLOCK */
-.work-left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.project-id {
-  font-family: monospace;
-  color: #dfff00;
-  font-size: 1.2rem;
-}
-
-.project-title {
-  font-size: 5rem;
-  font-weight: 900;
-  margin: 20px 0;
-  text-transform: uppercase;
-  letter-spacing: -2px;
-  line-height: 0.9;
-}
-
-.project-year {
-  color: #444;
-  font-family: monospace;
-  font-size: 1.1rem;
-}
-
-/* RIGHT: CONTENT BLOCK */
-.work-right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  padding-left: 80px;
+.work-item.active .item-content {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 30px;
 }
 
 .content-inner {
-  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.project-category {
+.p-cat {
   color: #dfff00;
   text-transform: uppercase;
+  font-size: 0.8rem;
   font-weight: bold;
   letter-spacing: 2px;
-  font-size: 0.85rem;
-  display: block;
-  margin-bottom: 20px;
 }
 
-.project-desc {
-  font-size: 1.2rem;
+.p-desc {
+  color: #aaa;
+  max-width: 600px;
   line-height: 1.6;
-  color: #ccc;
-  margin-bottom: 35px;
 }
 
-.project-tools {
+/* FOOTER & CHIPS */
+.p-footer {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 40px;
-}
-
-.tool-tag {
-  font-family: monospace;
-  font-size: 0.85rem;
-  background: #111;
-  padding: 6px 14px;
-  border-radius: 4px;
-  color: #888;
-  border: 1px solid #222;
-  transition: all 0.3s ease;
-}
-
-.work-item:hover .tool-tag {
-  border-color: #333;
-  color: #eee;
-}
-
-.project-links {
-  display: flex;
-  gap: 30px;
+  justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
 }
 
-.work-icon-link {
-  color: #666;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+.p-tools {
+  display: flex;
+  gap: 10px;
 }
 
-.work-icon-link:hover {
-  color: #dfff00;
-  transform: translateY(-5px);
-}
-
-.status-badge {
-  font-family: monospace;
-  color: #dfff00;
+.tool-chip {
+  background: #222;
+  color: #eee;
+  padding: 6px 16px;
   font-size: 0.8rem;
-  border: 1px solid #dfff00;
-  padding: 8px 18px;
-  border-radius: 50px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  border-radius: 50px; /* Rounded Edges for chips */
+  font-family: monospace;
+  border: 1px solid #333;
 }
 
-@media (max-width: 1100px) {
-  .project-title { font-size: 4rem; }
-  .work-right { padding-left: 40px; }
+.p-links {
+  display: flex;
+  gap: 20px;
 }
 
-@media (max-width: 900px) {
-  .work-item {
-    flex-direction: column;
-    padding: 60px 0;
-  }
-  
-  .project-title {
-    font-size: 3.5rem;
-  }
-  
-  .work-right {
-    padding-left: 0;
-    margin-top: 40px;
-  }
+.p-link {
+  color: #666;
+  transition: 0.3s;
+}
 
-  .project-desc { font-size: 1.1rem; }
+.p-link:hover {
+  color: #dfff00;
+  transform: translateY(-3px);
+}
+
+/* MOBILE ADAPTATION */
+@media (max-width: 768px) {
+  .main-title { font-size: 2.5rem; letter-spacing: 5px; }
+  .p-title { font-size: 2rem; }
+  .work-item { padding: 30px; }
 }
