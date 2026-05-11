@@ -16,11 +16,49 @@ const InstagramIcon = ({ size = 20 }) => (
 );
 
 const workData = [
-  { id: "01", title: "Inside.", category: "Fitness System", desc: "A minimalist, AI-powered fitness system designed for progressive overload. Features automated workout generation.", tools: ["React", "Node", "Supabase"] },
-  { id: "02", title: "CoLearn", category: "Collaborative Tool", desc: "Real-time collaborative study platform featuring shared code editors and live synchronization.", tools: ["React", "Firebase", "Socket.io"] },
-  { id: "03", title: "IMGE", category: "Streetwear Brand", desc: "Conceptual Indian streetwear focusing on narrative-driven silhouettes and identity.", tools: ["Shopify", "Photoshop", "Blender"], live: "https://www.wearimge.in", instagram: "https://instagram.com/wearimge.in" },
-  { id: "04", title: "PhishGuard", category: "ML Security", desc: "Chrome extension using machine learning models to detect phishing attempts in real-time.", tools: ["Python", "Chrome API", "React"], github: "https://github.com/Sriharsh-A" },
-  { id: "05", title: "Feelit", category: "Computer Vision", desc: "Emotion-based music recommendation engine using facial landmark detection.", tools: ["TensorFlow", "Spotify API", "Python"], github: "https://github.com/Sriharsh-A" }
+  { 
+    id: "01", 
+    title: "Inside.", 
+    category: "Fitness System", 
+    desc: "A minimalist, AI-powered fitness system designed for progressive overload. Features automated workout generation.", 
+    tools: ["React", "Node", "Supabase"],
+    github: "https://github.com/Sriharsh-A/Inside.",
+    live: "https://inside-alpha.vercel.app/"
+  },
+  { 
+    id: "02", 
+    title: "CoLearn", 
+    category: "Collaborative Tool", 
+    desc: "Real-time collaborative study platform featuring shared code editors and live synchronization.", 
+    tools: ["React", "Firebase", "Socket.io"],
+    github: "https://github.com/Sriharsh-A/colearn",
+    live: "https://colearn-ecru.vercel.app/"
+  },
+  { 
+    id: "03", 
+    title: "IMGE", 
+    category: "Streetwear Brand", 
+    desc: "Conceptual Indian streetwear focusing on narrative-driven silhouettes and identity.", 
+    tools: ["Shopify", "Photoshop", "Blender"], 
+    live: "https://www.wearimge.in", 
+    instagram: "https://instagram.com/wearimge.in" 
+  },
+  { 
+    id: "04", 
+    title: "PhishGuard", 
+    category: "ML Security", 
+    desc: "Chrome extension using machine learning models to detect phishing attempts in real-time.", 
+    tools: ["Python", "Chrome API", "React"], 
+    github: "https://github.com/Sriharsh-A/phising-detection" 
+  },
+  { 
+    id: "05", 
+    title: "Feelit", 
+    category: "Computer Vision", 
+    desc: "Emotion-based music recommendation engine using facial landmark detection.", 
+    tools: ["TensorFlow", "Spotify API", "Python"], 
+    github: "https://github.com/Sriharsh-A/feelit" 
+  }
 ];
 
 const Work = () => {
@@ -56,9 +94,21 @@ const Work = () => {
                   </div>
 
                   <div className="p-links">
-                    {project.github && <a href={project.github} className="p-link"><GithubIcon /></a>}
-                    {project.instagram && <a href={project.instagram} className="p-link"><InstagramIcon /></a>}
-                    {project.live && <a href={project.live} className="p-link"><ExternalLink size={20} /></a>}
+                    {project.github && (
+                      <a href={project.github} target="_blank" rel="noreferrer" className="p-link">
+                        <GithubIcon />
+                      </a>
+                    )}
+                    {project.instagram && (
+                      <a href={project.instagram} target="_blank" rel="noreferrer" className="p-link">
+                        <InstagramIcon />
+                      </a>
+                    )}
+                    {project.live && (
+                      <a href={project.live} target="_blank" rel="noreferrer" className="p-link">
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

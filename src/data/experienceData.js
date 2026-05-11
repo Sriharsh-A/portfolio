@@ -23,22 +23,13 @@ export const experienceData = [
     link: "https://www.instagram.com/p/DCEsV3wTC7l/?hl=en&img_index=1",
     images: [design3, design4, design5]
   },
-  {
+   {
     id: 3,
-    role: "UI Contributor",
-    company: "Open Source",
-    duration: "2024",
-    description: "Contributed UI concepts and visual assets.",
-    link: "#",
-    images: [] 
+    role: "Graphic Designer",
+    company: "Mom - Teacher",
+    duration: "2021 - Present",
+    description: "Assisted in creating visually engaging educational materials and promotional content for a home-based tutoring business. Designed flyers, social media graphics, and presentation slides to enhance the learning experience and attract new students.",
+    link: "https://canva.link/ndh6vigck7zryb7",
+    images: [design3, design4, design5]
   },
-  {
-    id: 4,
-    role: "Freelance Artist",
-    company: "Self",
-    duration: "2023",
-    description: "Commissioned digital art and illustrations.",
-    link: "#",
-    images: [] 
-  }
 ];

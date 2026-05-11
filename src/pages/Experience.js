@@ -1,82 +1,46 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Experience.css';
 import { experienceData } from '../data/experienceData';
 
 const Experience = () => {
-  const [selectedExp, setSelectedExp] = useState(null);
-
-  const previewData = experienceData.slice(0, 3);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <div className="experience-main">
-      <h1 className="section-title">Experience</h1>
-      
-      <div className="experience-deck">
-        {previewData.map((item) => (
+    <div className="xp-container">
+      <div className="xp-wrapper">
+        {experienceData.map((item, index) => (
           <div 
-            className="xp-card" 
-            key={item.id} 
-            onClick={() => setSelectedExp(item)}
+            className={`xp-row ${activeIndex === index ? 'active' : ''}`} 
+            key={item.id}
+            onMouseEnter={() => setActiveIndex(index)}
+            onMouseLeave={() => setActiveIndex(null)}
           >
-            <div className="xp-header">
-              <span className="xp-date">{item.duration}</span>
-              <span className="xp-company">{item.company}</span>
+            <div className="xp-content">
+              <span className="xp-number">0{index + 1}</span>
+              <h2 className="xp-large-title">{item.role}</h2>
+              <span className="xp-meta">{item.company} // {item.duration}</span>
+              
+              {/* THE DROPDOWN CONTENT */}
+              <div className="xp-dropdown">
+                <div className="xp-dropdown-inner">
+                  <p className="xp-full-desc">{item.description}</p>
+                  {item.link && (
+                    <a 
+                      href={item.link} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="xp-view-btn"
+                    >
+                      VIEW WORK &rarr;
+                    </a>
+                  )}
+                </div>
+              </div>
             </div>
-
-            <div className="xp-body">
-              <h3>{item.role}</h3>
-              <p>{item.description.substring(0, 100)}...</p> 
-            </div>
-            
-            <div className="xp-footer">
-               <div className="neon-line"></div>
-               <span className="click-hint">Click for details</span>
-            </div>
+            <div className="xp-underline"></div>
           </div>
         ))}
       </div>
-
-      <div style={{ marginTop: '60px', textAlign: 'center', zIndex: 10 }}>
-        <Link to="/all-experience" className="xp-see-more-btn">
-          See All Experience &rarr;
-        </Link>
-      </div>
-
-      {selectedExp && (
-        <div className="xp-modal-overlay" onClick={() => setSelectedExp(null)}>
-          <div className="xp-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="xp-close-btn" onClick={() => setSelectedExp(null)}>×</button>
-            <div className="xp-modal-header">
-              <span className="xp-modal-date">{selectedExp.duration}</span>
-              <h2>{selectedExp.role}</h2>
-              <h4 className="xp-modal-company">{selectedExp.company}</h4>
-            </div>
-            {selectedExp.images && selectedExp.images.length > 0 && (
-              <div className="xp-image-grid">
-                {selectedExp.images.map((img, index) => (
-                  <div key={index} className="xp-img-wrapper">
-                    <img src={img} alt="Work Proof" className="xp-proof-img" />
-                  </div>
-                ))}
-              </div>
-            )}
-            <p className="xp-full-desc">{selectedExp.description}</p>
-            {selectedExp.link && (
-              <div className="xp-modal-actions">
-                <a
-                  href={selectedExp.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="xp-view-btn"
-                >
-                  View Work &rarr;
-                </a>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </div>
   );
 };

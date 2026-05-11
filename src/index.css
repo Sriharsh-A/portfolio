@@ -1,13 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+:root {
+  background-color: #050505;
+  color-scheme: dark; /* Helps browser UI match your theme */
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #ffffff;
+  background-color: #050505;
+  overflow-x: hidden;
+  
+  /* Forces the entire app to center its main children */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* THE IMPACT LOOK: Sharp, Heavy, Tight */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900; /* Max weight for Impact */
+  letter-spacing: -0.05em; /* Percentage-based spacing is more consistent */
+  line-height: 0.95;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: #dfff00;
+  color: #000;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Utility class to center any section content */
+.centered-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
