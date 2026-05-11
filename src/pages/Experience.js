@@ -20,7 +20,6 @@ const Experience = () => {
               <h2 className="xp-large-title">{item.role}</h2>
               <span className="xp-meta">{item.company} // {item.duration}</span>
               
-              {/* THE DROPDOWN CONTENT */}
               <div className="xp-dropdown">
                 <div className="xp-dropdown-inner">
                   <p className="xp-full-desc">{item.description}</p>
