@@ -10,9 +10,7 @@ const About = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleResumeClick = () => {
-    window.open('/Resume.pdf', '_blank');
-  };
+  
 
   return (
     <>
@@ -44,30 +42,22 @@ const About = () => {
             
             <div className="about-bio">
               <p>
-                I’m <strong>Sriharsh Akkala</strong>, a 20-year-old founder, developer, and visual creator driven by
-                the idea that creativity works best when disciplines collide.
+               I'm Sriharsh Akkala, a 20-year-old founder, creator, and Information Technology student driven by curiosity, creativity, and emerging technology.
+
+As the Co-Founder and Design Head of IMGE, I transform ideas, emotions, and stories into visual experiences through fashion, branding, and digital content. My work sits at the intersection of creativity and technology, where concepts become tangible products and experiences.
+
+I'm particularly fascinated by Artificial Intelligence, prompt engineering, and creative workflows. I actively explore AI tools to generate images, videos, marketing assets, and content, constantly experimenting with new ways technology can amplify human creativity.
+
+Beyond AI and entrepreneurship, I work as an automotive photographer, capturing stories through visuals and collaborating with clients on professional shoots. Photography has taught me how to communicate emotion, attention to detail, and storytelling through a single frame.
+
+Whether I'm building a brand, creating AI-generated campaigns, analyzing data, or documenting a machine through my lens, my goal remains the same: to create work that is meaningful, impactful, and memorable.
               </p>
-              <p>
-                At 20, I founded a fashion brand, translating emotion, identity, and storytelling into wearable design.
-                At the same time, I build web applications where logic meets experience—writing code not just to function, but to feel right.
-              </p>
-              <p>
-                Beyond code and clothing, I work through photography and graphic design,
-                using visuals as a language to capture mood, movement, and meaning.
-                <strong>
-                  Whether I’m designing a streetwear drop, developing a React app, or framing a shot,
-                  my focus stays the same: clarity, impact, and authenticity.
-                </strong>
-                I don’t believe in choosing between art and engineering.
-                I build at the intersection where ideas turn real, and concepts turn tangible.
-              </p>
+              <p><strong>Does it look AI-generated?</strong> <br></br>
+<strong>
+Yesss. It probably is.</strong></p>
             </div>
 
-            <div className="about-actions">
-              <button className="btn-resume" onClick={handleResumeClick}>
-                Resume
-              </button>
-            </div>
+            
           </div>
         </div>
       </div>

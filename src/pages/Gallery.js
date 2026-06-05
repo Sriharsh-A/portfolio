@@ -1,12 +1,12 @@
 import React, { useState, useRef } from 'react';
 import './Gallery.css';
 
-import imgmonster from '../assets/monster.jpeg';
+import imgmonster from '../assets/cl10.png';
 import imgCC from '../assets/cc.jpg';
-import imgHS from '../assets/Hillscape.jpg';
-import imgdog from '../assets/dog.jpeg';
-import imglight from '../assets/light.jpeg';
-import imgmdsh from '../assets/mdsh.jpeg';
+import imgHS from '../assets/ferrari side 45.png';
+import imgdog from '../assets/h9.png';
+import imglight from '../assets/in1.png';
+import imgmdsh from '../assets/redbull right 45.png';
 
 const photographyImages = [
   imgmonster,

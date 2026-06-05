@@ -4,12 +4,12 @@ import './Skills.css';
 
 const allSkills = {
   technical: [
-    "React JS", "Next.js", "Tailwind CSS", "JavaScript", 
-    "Java", "Python", "SQL", "Git", "Node.js", "Framer Motion"
+    "React JS", "HTML", "CSS",
+    "Java", "Python", "SQL", "GitHub", "Antigravity", "Claude"
   ],
   creative: [
     "UI/UX Design", "Typography", "Photography", "Branding", 
-    "Photoshop", "Lightroom", "Figma", "Video Editing"
+    "Photoshop", "Lightroom", "Veo", "Video Editing", "Seedance", "Gemini ImageFX", "Capcut Pro"
   ]
 };
 
